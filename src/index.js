@@ -18,7 +18,8 @@ const app = dva({
 
 // 2. Model
 app.model(require('./models/app'))
-
+app.model(require("./models/query/productdetail"));
+app.model(require('./models/query/productlist'))
 // 3. Router
 app.router(require('./router'))
 

@@ -1,8 +1,8 @@
 module.exports = {
-  name: 'AntD Admin',
+  name: '公募后台系统',
   prefix: 'antdAdmin',
-  footerText: 'Ant Design Admin  © 2017 zuiidea',
-  logo: '/logo.png',
+  footerText: '金斧子投资咨询有限公司  ©2017 JFZ',
+  logo: '/jfz.jpeg',
   iconFontCSS: '/iconfont.css',
   iconFontJS: '/iconfont.js',
   baseURL: 'http://localhost:8000/api/v1',
@@ -17,5 +17,7 @@ module.exports = {
     users: '/users',
     user: '/user/:id',
     dashboard: '/dashboard',
+    productlist: '/query/products',
+    productdetail: '/query/product/:fundCode'
   },
 }

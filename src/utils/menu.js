@@ -1,8 +1,8 @@
 module.exports = [
   {
     id: 1,
-    icon: 'laptop',
-    name: 'Dashboard',
+    icon: 'home',
+    name: '销售情况',
     router: '/dashboard',
   },
   {
@@ -144,4 +144,23 @@ module.exports = [
     name: 'Test Navigation22',
     router: '/navigation/navigation2/navigation2',
   },
+  {
+    id: 7,
+    bpid: 1,
+    name: '查询',
+  },
+  {
+    id: 71,
+    bpid: 7,
+    mpid: 7,
+    name: '产品类查询',
+    router: '/query/product',
+  },
+  {
+    id: 711,
+    bpid: 71,
+    mpid: -1,
+    name: '产品详情查询',
+    router: '/query/product/:fundCode'
+  }
 ]

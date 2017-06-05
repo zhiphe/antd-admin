@@ -124,6 +124,20 @@ const Routers = function ({ history, app }) {
             }, 'chart-areaChart')
           },
         }, {
+          path: 'query/product',
+          getComponent (nextState, cb) {
+            require.ensure([], require => {
+              cb(null, require('./routes/query/productlist/'))
+            }, 'query-productlist')
+          },
+        }, {
+          path: 'query/product/:fundCode',
+          getComponent (nextState, cb) {
+            require.ensure([], require => {
+              cb(null, require('./routes/query/productdetail/'))
+            }, 'query-product-detail')
+          },
+        }, {
           path: '*',
           getComponent (nextState, cb) {
             require.ensure([], require => {
