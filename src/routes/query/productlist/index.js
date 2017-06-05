@@ -11,15 +11,12 @@ const ProductList = function({location, dispatch, productList, loading}) {
     const { list, pagination, currentItem, selectedRowKeys } = productList;
     const { pageSize } = pagination
 
-    const onDetailButtonClicked = function (record, e) {
-
-    }
-
     const columns = [
         {
             title: '基金代码',
             dataIndex: 'fundCode',
             key: 'fundCode',
+            render: (text, record) => <Link to={`/query/product/${record.fundCode}`}>{text}</Link>,
             width: 64
         },
         {
@@ -40,16 +37,6 @@ const ProductList = function({location, dispatch, productList, loading}) {
             key: 'fundType',
             width: 64
         },
-        {
-            title: '详情',
-            key: 'detail',
-            render: (text, record) => (
-                <Button type="primary">
-                    <Link to={`product/${record.fundCode}`}>详情</Link>
-                </Button>
-            ),
-            width: 40
-        }
     ]
 
     return (

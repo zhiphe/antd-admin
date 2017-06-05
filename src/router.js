@@ -135,7 +135,7 @@ const Routers = function ({ history, app }) {
           getComponent (nextState, cb) {
             require.ensure([], require => {
               cb(null, require('./routes/query/productdetail/'))
-            }, 'query-product-detail')
+            }, 'query-productdetail')
           },
         }, {
           path: '*',

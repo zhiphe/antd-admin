@@ -52,6 +52,7 @@ export default {
   subscriptions: {
     setup ({dispatch, history}) {
       history.listen(() => {
+        console.log(location);
         const match = pathToRegexp('/query/product/:fundCode').exec(location.pathname)
         if (match) {
           dispatch({ type: 'query', payload: { fundCode: match[1] } })
