@@ -6,6 +6,8 @@ import { NumberCard, Quote, Sales, Weather, RecentSales, Comments, Completed, Br
 import styles from './index.less'
 import { color } from '../../utils'
 import Container from '../chart/Container'
+import SimpleBarChart from './simplebarchart'
+import BalanceSummary from './balanceSummary'
 import {
   BarChart,
   Bar,
@@ -62,23 +64,9 @@ const data = [
   },
 ]
 
-const SimpleBarChart = (data) => (
-  <Container>
-    <BarChart data={data} margin={{
-      top: 5,
-      right: 30,
-      left: 20,
-      bottom: 5,
-    }}>
-      <XAxis dataKey="name" />
-      <YAxis />
-      <CartesianGrid strokeDasharray="3 3" />
-      <Tooltip />
-      <Legend />
-      <Bar dataKey="pv" fill="#8884d8" />
-    </BarChart>
-  </Container>
-)
+const SimpleBarChartProps = {
+  data: data
+}
 
 const StackedBarChart = () => (
   <Container>
@@ -100,17 +88,23 @@ const StackedBarChart = () => (
 )
 
 function Dashboard ({ dashboard }) {
-
+  console.log(SimpleBarChart)
+  console.log(Container)
   return (
     <Row gutter={24}>
       <Col lg={8} md={24}>
         <Card title="SimpleBarChart">
-          <SimpleBarChart data={data}/>
+          <SimpleBarChart {...SimpleBarChartProps}/>
         </Card>
       </Col>
       <Col lg={8} md={24}>
         <Card title="StackedBarChart">
           <StackedBarChart />
+        </Card>
+      </Col>
+      <Col lg={8} md={24}>
+        <Card title="StackedBarChart">
+          <BalanceSummary />
         </Card>
       </Col>
     </Row>
